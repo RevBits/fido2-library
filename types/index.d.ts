@@ -1,6 +1,6 @@
 /// <reference types="node" />
 
-declare module "fido2-library" {
+declare module "fido2-lib" {
   class Fido2Lib {
     constructor(opts?: Fido2LibOptions);
 

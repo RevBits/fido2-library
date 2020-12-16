@@ -711,14 +711,6 @@ describe("assertion validation", function() {
 			assert.isTrue(assnResp.audit.journal.has("counter"));
 		});
 
-		it("returns true if counter is not supported but do not add it to journal", async function () {
-			assnResp.authnrData.set("counter", 0);
-			assnResp.expectations.set("prevCounter", 0);
-			var ret = await assnResp.validateCounter();
-			assert.isTrue(ret);
-			assert.isFalse(assnResp.audit.journal.has("counter"));
-		});
-
 		it("throws if counter is the same", function() {
 			assert.strictEqual(assnResp.authnrData.get("counter"), 363);
 			assnResp.expectations.set("prevCounter", 363);
